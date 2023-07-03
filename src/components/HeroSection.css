@@ -1,72 +1,65 @@
-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: -1;
-}
-
+/* Hero Section container */
 .hero-container {
-  /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+  position: relative;
+  overflow: hidden;
   height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
 }
 
 .hero-container > h1 {
   color: #fff;
   font-size: 100px;
-  margin-top: -100px;
+  margin: 0; /* Remove margin-top */
+  position: absolute; /* Position absolute */
+  top: 40%; /* Position at the top of the hero container */
+  left: 50%; /* Position at the center horizontally */
+  transform: translate(-50%, -50%); /* Center vertically */
+  z-index: 2; /* Place above slider */
 }
 
 .hero-container > p {
-  margin-top: 8px;
   color: #fff;
   font-size: 32px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: absolute; /* Position absolute */
+  top: calc(40% + 100px); /* Position below the h1 and add extra spacing */
+  left: 50%; /* Position at the center horizontally */
+  transform: translate(-50%, -50%); /* Center vertically */
+  z-index: 2; /* Place above slider */
 }
 
-.hero-btns {
-  margin-top: 32px;
+/* Button styling */
+.hero-container .hero-btns {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  z-index: 2;
 }
 
-.hero-btns .btn {
-  margin: 6px;
+.hero-container .hero-btns .btn {
+  margin: 0 8px;
 }
 
-.fa-play-circle {
-  margin-left: 4px;
+/* Slider styling */
+.NavbarSlider {
+  height: 100%;
+  width: 100%;
 }
 
-@media screen and (max-width: 960px) {
-  .hero-container > h1 {
-    font-size: 70px;
-    margin-top: -150px;
-  }
+.NavbarSlider .slider {
+  width: 100%;
+  height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .hero-container > h1 {
-    font-size: 50px;
-    margin-top: -100px;
-  }
+.NavbarSlider .slider img {
+  object-fit: cover;
+}
 
-  .hero-container > p {
-    font-size: 30px;
-  }
-
-  .btn-mobile {
-    display: block;
-    text-decoration: none;
-  }
-
-  .btn {
-    width: 100%;
-  }
+/* Background styling */
+.hero-container {
+  background-color: transparent;
 }
